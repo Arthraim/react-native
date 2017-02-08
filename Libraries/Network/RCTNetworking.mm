@@ -260,6 +260,8 @@ RCT_EXPORT_MODULE()
       [request setValue:(@(request.HTTPBody.length)).description forHTTPHeaderField:@"Content-Length"];
     }
 
+    request.HTTPShouldHandleCookies = NO; // HACK
+
     dispatch_async(self->_methodQueue, ^{
       block(request);
     });
