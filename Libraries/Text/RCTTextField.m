@@ -87,7 +87,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
   UITextRange *selectedTextRange = [self textRangeFromPosition:start toPosition:end];
 
   NSInteger eventLag = _nativeEventCount - _mostRecentEventCount;
-  if (eventLag == 0 && ![currentSelection isEqual:selectedTextRange]) {
+  if (/*eventLag == 0 && */![currentSelection isEqual:selectedTextRange]) {
     _previousSelectionRange = selectedTextRange;
     self.selectedTextRange = selectedTextRange;
   } else if (eventLag > RCTTextUpdateLagWarningThreshold) {
